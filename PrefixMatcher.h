@@ -4,12 +4,14 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include "NewTrie.h"
 
 class PrefixMatcher {
     private:
-        int i;
-
+        NewTrie trie;
+        
     public:
+        void insert(std::string address, int routerNumber);
         int selectRouter(std::string networkAddress);
 };
 

@@ -6,7 +6,7 @@
 
 class NewTrieNode {
     public:
-        std::vector<NewTrieNode*> child;
+        NewTrieNode* child[2];
         int routerNumber;
         NewTrieNode();
 };
