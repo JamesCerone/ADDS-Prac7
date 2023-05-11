@@ -15,11 +15,23 @@ int PrefixMatcher::selectRouter(string networkAddress){
         if (currNode->routerNumber != -1) {
                 lastRouter = currNode->routerNumber;
         }
-        else if (currNode->child[j] == nullptr){
+        if (currNode->child[j] == nullptr){
             break;
         }
         currNode = currNode->child[j];
     }
-    return lastRouter;
+    while (currNode->routerNumber == -1){
+        if (currNode->child[0] != nullptr){
+            currNode = currNode->child[0];
+        }
+        else {
+            currNode = currNode->child[1];
+        }
+    }
+    return currNode->routerNumber;
 }
+
+// int PrefixMatcher::firstNumberFound(NewTrieNode* ){
+
+// }
 
