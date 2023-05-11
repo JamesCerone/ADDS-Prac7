@@ -6,10 +6,15 @@
 #include <string>
 #include "Trie.h"
 
+
 class Autocomplete {
+    private:
+        Trie trie;
+
     public:
-        // vector<string> getSuggestions(string partialWord);
-        // void insert(string word);
+        std::vector<std::string> getSuggestions(std::string partialWord);
+        void insert(std::string word);
+        void findWords(TrieNode* node, std::string prefix, std::vector<std::string>& res);
 
 };
 

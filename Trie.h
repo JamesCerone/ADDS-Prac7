@@ -11,11 +11,10 @@ class Trie {
 
     public:
         Trie();
-        void insert(std::string word);
-
+        void insertWord(std::string word);
         void search(std::string word);
 
-
+        friend class Autocomplete;
 };
 
 
